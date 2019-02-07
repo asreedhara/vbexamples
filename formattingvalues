@@ -1,0 +1,38 @@
+Public Class Form1
+
+    'Imagine your computer as a massive warehouse, and all the data in your computer as boxes within the warehouse.
+    'A variable is a box within your warehouse.
+    'Now, each of your boxes has its own identifying name, like a package ID.
+    'Each box can hold something (duh), but you should be sure to specify what you want them to hold.
+
+    'Here, we create a new box in your warehouse.
+    'The box is named: decValue
+    'We specify that we want it to hold Decimal values.
+    'We then use the assignment operator to put a decimal value inside of it.
+    Dim decValue As Decimal = 12.3
+
+    'Cool, so now we have a box in our warehouse named decValue that holds decimals
+    'It also now happens to be holding the value 12.3
+
+    Private Sub btnShowValues_Click(sender As Object, e As EventArgs) Handles btnShowValues.Click
+
+        'Now, it holds 12.3, so that's cool. But say we want to display that value in dollar format.
+        'So, we want to display the value like this: 12.30
+        'This is a little complex. We'll use the ToString way.
+        'What the following does, is it takes the value in decValue and fits it to the format in the parentheses.
+        'Basically, it takes 12.3, and reformats it as such:
+        'It puts a dollar sign first, then the number, but only up to 2 decimal points.
+        'Then it takes this new value and puts it into our decValue box, replacing our old unformatted decimal with our new formatted string.
+        decValue = decValue.ToString("0.00")
+
+        'Quick note- decValue is now a STRING, hence the thing being named "ToString"
+
+        'Now I display it in a label (first adding a dollar sign in front), and bam.
+        lblDollarValue.Text = "$" & decValue
+
+        'Note 2- If Mr. Lockamy gets mad at you for using concatenation (fancy word for the & symbol) tell him I told you to do it so he can get mad at me :p
+        'I'll be in his room at Lunch again tomorrow so if you need help either Karl and I got ya.
+
+    End Sub
+
+End Class
